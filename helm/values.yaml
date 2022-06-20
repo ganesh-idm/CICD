@@ -7,7 +7,7 @@
 global:
   # TODO: find somewhere to show tag
   ingress:
-    enabled: true
+    enabled: false
     addReleaseNameToHost: prepend
     defaultDomain: "ping-devops.com"
     defaultTlsSecret:
@@ -24,7 +24,7 @@ global:
 pingaccess-admin:
   privateCert:
     generate: true
-  enabled: true
+  enabled: false
   envs:
     # PingAccess Admin Console will receive the admin and engine profile.
     SERVER_PROFILE_ADMIN_PATH: profiles/pingaccess-admin
@@ -42,7 +42,7 @@ pingaccess-admin:
         timeoutSeconds: 600
 
 pingaccess-engine:
-  enabled: true
+  enabled: false
   envs:
     SERVER_PROFILE_PATH: profiles/pingaccess-engine
     PA_ENGINE_PROFILE_SHA: "${PINGACCESS_ENGINE_SHA}"
@@ -57,7 +57,7 @@ pingaccess-engine:
         cpu: 2
 
 pingfederate-admin:
-  enabled: true
+  enabled: false
   envs:
     SERVER_PROFILE_ADMIN_PATH: profiles/pingfederate-admin
     SERVER_PROFILE_PARENT: ADMIN
@@ -67,7 +67,7 @@ pingfederate-admin:
     PF_ENGINE_PROFILE_SHA: "${PINGFEDERATE_ENGINE_SHA}"
 
 pingfederate-engine:
-  enabled: true
+  enabled: false
   envs:
     SERVER_PROFILE_PATH: profiles/pingfederate-engine
     PF_ENGINE_PROFILE_SHA: "${PINGFEDERATE_ENGINE_SHA}"
@@ -104,7 +104,7 @@ pingdataconsole:
     PDC_PROFILE_SHA: "${PINGDATACONSOLE_SHA}"
 
 pingauthorize:
-  enabled: true
+  enabled: false
   envs:
     SERVER_PROFILE_PATH: profiles/pingauthorize
     PAZ_PROFILE_SHA: "${PINGAUTHORIZE_SHA}"
