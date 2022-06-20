@@ -57,7 +57,7 @@ pingaccess-engine:
         cpu: 2
 
 pingfederate-admin:
-  enabled: false
+  enabled: true
   envs:
     SERVER_PROFILE_ADMIN_PATH: profiles/pingfederate-admin
     SERVER_PROFILE_PARENT: ADMIN
@@ -81,7 +81,7 @@ pingfederate-engine:
         cpu: 2
 
 pingdirectory:
-  enabled: true
+  enabled: false
   envs:
     SERVER_PROFILE_PATH: profiles/pingdirectory
     PD_PROFILE_SHA: "${PINGDIRECTORY_SHA}"
@@ -98,7 +98,7 @@ pingdirectory:
         memory: 2Gi
 
 pingdataconsole:
-  enabled: true
+  enabled: false
   envs:
     SERVER_PROFILE_PATH: profiles/pingdataconsole
     PDC_PROFILE_SHA: "${PINGDATACONSOLE_SHA}"
