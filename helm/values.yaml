@@ -57,11 +57,11 @@ pingaccess-engine:
         cpu: 2
 
 pingfederate-admin:
-  enabled: true
+  enabled: false
   envs:
-    SERVER_PROFILE_ADMIN_PATH: profiles/pingfederate-admin
+    SERVER_PROFILE_ADMIN_PATH: baseline/pingfederate-admin
     SERVER_PROFILE_PARENT: ADMIN
-    SERVER_PROFILE_PATH: profiles/pingfederate-engine
+    SERVER_PROFILE_PATH: baseline/pingfederate-engine
 
     PF_ADMIN_PROFILE_SHA: "${PINGFEDERATE_ADMIN_SHA}"
     PF_ENGINE_PROFILE_SHA: "${PINGFEDERATE_ENGINE_SHA}"
@@ -81,9 +81,9 @@ pingfederate-engine:
         cpu: 2
 
 pingdirectory:
-  enabled: false
+  enabled: true
   envs:
-    SERVER_PROFILE_PATH: profiles/pingdirectory
+    SERVER_PROFILE_PATH: baseline/pingdirectory
     PD_PROFILE_SHA: "${PINGDIRECTORY_SHA}"
   container:
     replicaCount: 1
