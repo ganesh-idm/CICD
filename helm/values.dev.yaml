@@ -28,6 +28,5 @@ pingdataconsole:
     SERVER_PROFILE_BRANCH: "${REF}"
 
 pingauthorize:
-  enabled: true
   envs:
     SERVER_PROFILE_BRANCH: "${REF}"
