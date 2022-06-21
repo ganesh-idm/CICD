@@ -27,7 +27,7 @@ pingaccess-admin:
   enabled: true
   envs:
     # PingAccess Admin Console will receive the admin and engine profile.
-    SERVER_PROFILE_ADMIN_PATH: baseline/pingaccess-admin
+    SERVER_PROFILE_ADMIN_PATH: baseline/pingaccess
     # On the default values.yaml we use the repository default branch
     SERVER_PROFILE_PARENT: ADMIN
     SERVER_PROFILE_PATH: profiles/pingaccess-engine
@@ -44,7 +44,7 @@ pingaccess-admin:
 pingaccess-engine:
   enabled: true
   envs:
-    SERVER_PROFILE_PATH: baseline/pingaccess-engine
+    SERVER_PROFILE_PATH: baseline/pingaccess
     PA_ENGINE_PROFILE_SHA: "${PINGACCESS_ENGINE_SHA}"
   # For products where more than 1 instance may be desired, the replicaCount option is included
   container:
@@ -59,7 +59,7 @@ pingaccess-engine:
 pingfederate-admin:
   enabled: true
   envs:
-    SERVER_PROFILE_ADMIN_PATH: baseline/pingfederate-admin
+    SERVER_PROFILE_ADMIN_PATH: baseline/pingfederate
     SERVER_PROFILE_PARENT: ADMIN
     SERVER_PROFILE_PATH: baseline/pingfederate-engine
 
@@ -69,7 +69,7 @@ pingfederate-admin:
 pingfederate-engine:
   enabled: true
   envs:
-    SERVER_PROFILE_PATH: baseline/pingfederate-engine
+    SERVER_PROFILE_PATH: baseline/pingfederate
     PF_ENGINE_PROFILE_SHA: "${PINGFEDERATE_ENGINE_SHA}"
   container:
     replicaCount: 1
