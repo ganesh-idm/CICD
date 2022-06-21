@@ -30,7 +30,7 @@ pingaccess-admin:
     SERVER_PROFILE_ADMIN_PATH: baseline/pingaccess
     # On the default values.yaml we use the repository default branch
     SERVER_PROFILE_PARENT: ADMIN
-    SERVER_PROFILE_PATH: profiles/pingaccess-engine
+    SERVER_PROFILE_PATH: baseline/pingaccess-engine
     # <PRODUCT>_PROFILE_SHA is used to trigger a rolling update of the product
     #   SHA is based on git history of the profiles folder.
     PA_ADMIN_PROFILE_SHA: "${PINGACCESS_ADMIN_SHA}"
@@ -106,7 +106,7 @@ pingdataconsole:
 pingauthorize:
   enabled: false
   envs:
-    SERVER_PROFILE_PATH: profiles/pingauthorize
+    SERVER_PROFILE_PATH: baseline/pingauthorize
     PAZ_PROFILE_SHA: "${PINGAUTHORIZE_SHA}"
   container:
     replicaCount: 1
