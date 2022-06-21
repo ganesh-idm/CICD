@@ -156,11 +156,11 @@ if test "${REPLY}" != "n"; then
   mkdir profiles
   cp -r ${_pingProfilesDir}/baseline/* profiles
   cd profiles || exit
-  mv pingaccess pingaccess-engine
-  mv pingfederate pingfederate-engine
-  mkdir -p pingaccess-admin/instance pingfederate-admin/instance
-  mv pingaccess-engine/instance/data pingaccess-admin/instance/data
-  mv pingfederate-engine/instance/bulk-config pingfederate-admin/instance/bulk-config
+  # mv pingaccess pingaccess-engine
+  # mv pingfederate pingfederate-engine
+  mkdir -p pingaccess/instance pingfederate/instance
+  # mv pingaccess-engine/instance/data pingaccess-admin/instance/data
+  # mv pingfederate-engine/instance/bulk-config pingfederate-admin/instance/bulk-config
   cp -r pingcentral/dev-unsecure/instance pingcentral
   rm -rf CONTRIBUTING.md DISCLAIMER LICENSE docker-compose.yaml pingdataconsole-8.3 pingdatagovernance-8.1.0.0 pingdatagovernance
   cd -  >/dev/null 2>&1 || exit
