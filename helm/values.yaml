@@ -30,7 +30,7 @@ pingaccess-admin:
     SERVER_PROFILE_ADMIN_PATH: baseline/pingaccess
     # On the default values.yaml we use the repository default branch
     SERVER_PROFILE_PARENT: ADMIN
-    SERVER_PROFILE_PATH: baseline/pingaccess-engine
+    SERVER_PROFILE_PATH: baseline/pingaccess
     # <PRODUCT>_PROFILE_SHA is used to trigger a rolling update of the product
     #   SHA is based on git history of the profiles folder.
     PA_ADMIN_PROFILE_SHA: "${PINGACCESS_ADMIN_SHA}"
@@ -61,7 +61,7 @@ pingfederate-admin:
   envs:
     SERVER_PROFILE_ADMIN_PATH: baseline/pingfederate
     SERVER_PROFILE_PARENT: ADMIN
-    SERVER_PROFILE_PATH: baseline/pingfederate-engine
+    SERVER_PROFILE_PATH: baseline/pingfederate
 
     PF_ADMIN_PROFILE_SHA: "${PINGFEDERATE_ADMIN_SHA}"
     PF_ENGINE_PROFILE_SHA: "${PINGFEDERATE_ENGINE_SHA}"
