@@ -7,7 +7,7 @@
 global:
   # TODO: find somewhere to show tag
   ingress:
-    enabled: false
+    enabled: true
     addReleaseNameToHost: prepend
     defaultDomain: "ping-devops.com"
     defaultTlsSecret:
@@ -17,17 +17,17 @@ global:
   # Environment variables that should exist in every product are listed in global.envs
   envs:
     ## CHANGEME - hardcode this line
-    SERVER_PROFILE_URL: "https://github.com/pingidentity/pingidentity-server-profiles.git"
+    SERVER_PROFILE_URL: "https://github.com/${GITHUB_REPOSITORY}"
     ## CHANGEME - hardcode this line
-    SERVER_PROFILE_ADMIN_URL: "https://github.com/pingidentity/pingidentity-server-profiles.git"
+    SERVER_PROFILE_ADMIN_URL: "https://github.com/${GITHUB_REPOSITORY}"
 
 pingaccess-admin:
   privateCert:
     generate: true
-  enabled: false
+  enabled: true
   envs:
     # PingAccess Admin Console will receive the admin and engine profile.
-    SERVER_PROFILE_ADMIN_PATH: profiles/pingaccess-admin
+    SERVER_PROFILE_ADMIN_PATH: baseline/pingaccess-admin
     # On the default values.yaml we use the repository default branch
     SERVER_PROFILE_PARENT: ADMIN
     SERVER_PROFILE_PATH: profiles/pingaccess-engine
@@ -42,9 +42,9 @@ pingaccess-admin:
         timeoutSeconds: 600
 
 pingaccess-engine:
-  enabled: false
+  enabled: true
   envs:
-    SERVER_PROFILE_PATH: profiles/pingaccess-engine
+    SERVER_PROFILE_PATH: baseline/pingaccess-engine
     PA_ENGINE_PROFILE_SHA: "${PINGACCESS_ENGINE_SHA}"
   # For products where more than 1 instance may be desired, the replicaCount option is included
   container:
@@ -57,7 +57,7 @@ pingaccess-engine:
         cpu: 2
 
 pingfederate-admin:
-  enabled: false
+  enabled: true
   envs:
     SERVER_PROFILE_ADMIN_PATH: baseline/pingfederate-admin
     SERVER_PROFILE_PARENT: ADMIN
@@ -67,9 +67,9 @@ pingfederate-admin:
     PF_ENGINE_PROFILE_SHA: "${PINGFEDERATE_ENGINE_SHA}"
 
 pingfederate-engine:
-  enabled: false
+  enabled: true
   envs:
-    SERVER_PROFILE_PATH: profiles/pingfederate-engine
+    SERVER_PROFILE_PATH: baseline/pingfederate-engine
     PF_ENGINE_PROFILE_SHA: "${PINGFEDERATE_ENGINE_SHA}"
   container:
     replicaCount: 1
@@ -98,9 +98,9 @@ pingdirectory:
         memory: 2Gi
 
 pingdataconsole:
-  enabled: false
+  enabled: true
   envs:
-    SERVER_PROFILE_PATH: profiles/pingdataconsole
+    SERVER_PROFILE_PATH: baseline/pingdataconsole
     PDC_PROFILE_SHA: "${PINGDATACONSOLE_SHA}"
 
 pingauthorize:
